@@ -1,0 +1,17 @@
+language: python
+python:
+  - "2.6"
+  - "2.7"
+  - "3.3"
+install:
+# install dependencies from setup.py
+   - pip install .
+deploy:
+  provider: openshift
+  user: andy@syntaxtechnology.com
+  password:
+    secure: uW5D1O+kLO1b1LYQ+T2TYVWX5qkdhRSPLvb89eNfhpqeD33FHLH3Cl5/8dV0C1qV3NWJvD9b1rPXsNB4812yabY9a2bLhoQtS2L7Mji+3E7GpZrZWXZW3mL5Vt6MUoFnKNgYQopL6RGwVVzBkvO2JcLCOWTmWhMhTlzbE4a+AfhaJsqx70sicEvQh62q+5/WxDHlHqnX0s52fFtoDhWSrjpXvoaKVNSmUbpIwSWbqhYLgQNrxz+P4RlzB5HdZ9EIZLtE2pBtvBnzK+uO4foS31P10eIjkGwmrEEQ/KI610V82XUl0q+ikr2R0erHhWYSyhDQBkr77wlxVSq9x8BAcJBiTei8LtwU/elBYueL9KX1qMaTTPg4iY+N9Au9dmQbhXGNvTAR56qS8OkHWPsOsxu50LGBJqD39VzyJTNSA0YZZWOnN8aAeEHuwXckzed6TV3Me9LUtvuXcNbCLGx2euGRbuqumOlh4a0/Ec7rOoB/1XCoKHowEvYaIyz8OTL4JSqSAxC0oaxi9+hYnp5pZgaa8lqfrYunLQneHemIPNHSW79CD8WXQrSdAmiuBVpJKOdnO9k0D1YjEaFB67TkyI9T7TUqe8sOkXC4fcrTCpL5q30RyWlVsNti0npsisxjKwKHcHR6KIgO9EeVKjiK+6hOxja5QTiNqWfZ0CEK3hc=
+  app: seplagiarism
+  domain: seplagiarism
+  on:
+    repo: AWegnerGitHub/openshift_se_plagiarism
