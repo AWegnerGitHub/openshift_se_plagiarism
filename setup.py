@@ -6,5 +6,5 @@ setup(name='SE Plagiarism Control Panel',
       author='Andy Wegner',
       author_email='se-andy@syntaxtechnology.com',
       url='',
-     install_requires=['Flask>=0.10.1'],
+     install_requires=['Flask>=0.10.1', 'pandas>=0.17.1', 'simplejson==3.8.1', 'beautifulsoup4==4.4.0'],
      )
