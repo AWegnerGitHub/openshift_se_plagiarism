@@ -5,6 +5,7 @@ from flask import Flask, request, flash, url_for, redirect, \
 
 app = Flask(__name__)
 app.config.from_pyfile('flaskapp.cfg')
+db = SQLAlchemy(app)
 
 class User(db.Model):
     __tablename__ = 'users'
