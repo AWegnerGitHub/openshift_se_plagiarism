@@ -28,3 +28,5 @@ def print_environment_variables():
 
 if __name__ == '__main__':
     app.run()
+
+db.create_all()
