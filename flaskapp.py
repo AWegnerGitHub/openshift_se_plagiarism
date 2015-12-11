@@ -35,7 +35,7 @@ def print_environment_variables():
 @app.route("/setup_db")
 def setup_database():
     db.create_all()
-	return "Works"
+    return "Works"
 
 
 if __name__ == '__main__':
