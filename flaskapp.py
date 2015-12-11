@@ -6,6 +6,11 @@ from flask import Flask, request, flash, url_for, redirect, \
 app = Flask(__name__)
 app.config.from_pyfile('flaskapp.cfg')
 
+class User(db.Model):
+    __tablename__ = 'users'
+    id = db.Column('user_id', db.Integer, primary_key=True)
+    name = db.Column(db.String(60))
+
 @app.route('/')
 def index():
     return render_template('index.html')
@@ -24,9 +29,11 @@ def print_environment_variables():
     for key in os.environ.keys():
         vars += "{} => {} <br/>\n".format(key, os.environ[key])
     return vars
+    
+@app.route("/setup_db")
+def setup_database():
+    db.create_all()
 
 
 if __name__ == '__main__':
     app.run()
-
-db.create_all()
