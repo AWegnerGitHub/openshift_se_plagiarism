@@ -4,3 +4,4 @@ simplejson==3.8.1
 beautifulsoup4==4.4.0
 sqlalchemy==1.0.9
 pymysql==0.6.7
+flask-sqlalchemy==2.1
