@@ -17,6 +17,14 @@ def serveStaticResource(resource):
 @app.route("/test")
 def test():
     return "<strong>It's Alive and pushed via Travis!</strong>"
+    
+@app.route("/envvars")
+def print_environment_variables():
+    vars = "Content-Type: text/plain\n\n"
+    for key in os.environ.keys():
+        vars += "{} => {} <br/>\n".format(key, os.environ[key])
+    return vars
+
 
 if __name__ == '__main__':
     app.run()
