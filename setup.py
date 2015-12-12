@@ -11,7 +11,7 @@ setup(name='SE Plagiarism Control Panel',
       author_email='se-andy@syntaxtechnology.com',
       url='',
      install_requires=['Flask>=0.10.1', 'pandas>=0.17.1', 'simplejson==3.8.1', 'beautifulsoup4==4.4.0',
-	 'sqlalchemy==1.0.9','pymysql==0.6.7','flask-sqlalchemy==2.1','pytest>=2.8.0','hypothesis==1.16.0',
+	 'sqlalchemy==1.0.9','pymysql==0.6.7','flask-sqlalchemy==2.1','pytest>=2.8.0','hypothesis==1.9.0',
 	 'pytest-runner==2.6.2'],
 	 setup_requires=[] + pytest_runner,
 	 tests_require=['pytest']

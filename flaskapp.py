@@ -23,7 +23,7 @@ def serveStaticResource(resource):
 
 @app.route("/test")
 def test():
-    return "<strong>It's Alive and pushed via Travis!</strong>"
+    return "<strong>It's Alive and pushed via Travis! Hooray!</strong>"
     
 @app.route("/envvars")
 def print_environment_variables():

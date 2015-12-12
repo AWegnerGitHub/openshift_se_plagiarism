@@ -17,3 +17,4 @@ deploy:
   domain: seplagiarism
   on:
     repo: AWegnerGitHub/openshift_se_plagiarism
+  skip_cleanup: true
