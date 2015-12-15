@@ -3,13 +3,12 @@ from datetime import datetime
 from flask_sqlalchemy import SQLAlchemy
 from flask import Flask, request, flash, url_for, redirect, \
      render_template, abort, send_from_directory
+from utils import utils
+
 
 app = Flask(__name__)
 # If deployed on Openshift, utilize Prod config
-if os.environ.get('OPENSHIFT_APP_UUID'):
-    app.config.from_pyfile('flaskapp-prod.cfg')
-else:
-    app.config.from_pyfile('flaskapp-dev.cfg')
+utils.load_config(app)
 db = SQLAlchemy(app)
 
 class User(db.Model):
