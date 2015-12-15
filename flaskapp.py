@@ -5,7 +5,11 @@ from flask import Flask, request, flash, url_for, redirect, \
      render_template, abort, send_from_directory
 
 app = Flask(__name__)
-app.config.from_pyfile('flaskapp.cfg')
+# If deployed on Openshift, utilize Prod config
+if os.environ.get('OPENSHIFT_APP_UUID'):
+    app.config.from_pyfile('flaskapp-prod.cfg')
+else:
+    app.config.from_pyfile('flaskapp-dev.cfg')
 db = SQLAlchemy(app)
 
 class User(db.Model):
