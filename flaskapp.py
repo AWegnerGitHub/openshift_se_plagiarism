@@ -6,7 +6,6 @@ from flask import Flask, request, flash, url_for, redirect, \
 from utils import utils
 import models
 
-
 app = Flask(__name__)
 utils.load_config(app)
 models.db.init_app(app)

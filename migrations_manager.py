@@ -3,13 +3,13 @@ from flask.ext.sqlalchemy import SQLAlchemy
 from flask.ext.script import Manager
 from flask.ext.migrate import Migrate, MigrateCommand
 from utils import utils
-from models.models import User
+import models
 
 app = Flask(__name__)
 utils.load_config(app)
-db = SQLAlchemy(app)
+models.db.init_app(app)
 
-migrate = Migrate(app, db)
+migrate = Migrate(app, models.db)
 manager = Manager(app)
 manager.add_command('db', MigrateCommand)
 

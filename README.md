@@ -5,10 +5,14 @@
 
     python migrations_manager.py db init
 	python migrations_manager.py db migrate
+
+Each version requires adding `import models` due to application layout...
 	
-Upgrading
+## Upgrading
 
 	python migrations_manager.py db upgrade
+	
+
 
 # A basic Flask quickstart 
 *With support for serving easy APIs and static content*
