@@ -4,17 +4,12 @@ from flask_sqlalchemy import SQLAlchemy
 from flask import Flask, request, flash, url_for, redirect, \
      render_template, abort, send_from_directory
 from utils import utils
+import models
 
 
 app = Flask(__name__)
-# If deployed on Openshift, utilize Prod config
 utils.load_config(app)
-db = SQLAlchemy(app)
-
-class User(db.Model):
-    __tablename__ = 'users'
-    id = db.Column('user_id', db.Integer, primary_key=True)
-    name = db.Column(db.String(60))
+models.db.init_app(app)
 
 @app.route('/')
 def index():

@@ -1,3 +1,15 @@
+# Using Flask-Migration
+
+
+## Initial Migration
+
+    python migrations_manager.py db init
+	python migrations_manager.py db migrate
+	
+Upgrading
+
+	python migrations_manager.py db upgrade
+
 # A basic Flask quickstart 
 *With support for serving easy APIs and static content*
 
