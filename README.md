@@ -6,11 +6,18 @@
     python migrations_manager.py db init
 	python migrations_manager.py db migrate
 
-Each version requires adding `import models` due to application layout...
+## Creating a new migration
+
+	python migrations_manager.py db migrate
 	
 ## Upgrading
 
 	python migrations_manager.py db upgrade
+	
+	
+If the Action Hooks aren't executable, run this and then commit the changes:
+
+    git update-index --chmod=+x <file>
 	
 
 

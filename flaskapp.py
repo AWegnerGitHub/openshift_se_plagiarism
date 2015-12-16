@@ -8,7 +8,10 @@ import models
 
 app = Flask(__name__)
 utils.load_config(app)
-models.db.init_app(app)
+
+from models import db
+
+db.init_app(app)
 
 @app.route('/')
 def index():
