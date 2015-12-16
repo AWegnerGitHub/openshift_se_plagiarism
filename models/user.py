@@ -56,4 +56,4 @@ class User(models.db.Model):
             return False
         
     def __repr__(self):
-        return '<User: {} ({}, {})'.format(self.id, self.name, self.profile_link)
+        return '<User: id={} (name={}, website={})'.format(self.id, self.name, self.profile_link)

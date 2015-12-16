@@ -16,3 +16,4 @@ class CoerceUTF8(TypeDecorator):
         
 from user import User
 from setting import Setting
+from tag import Tag
