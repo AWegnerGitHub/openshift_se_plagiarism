@@ -15,3 +15,4 @@ class CoerceUTF8(TypeDecorator):
         return value
         
 from user import User
+from setting import Setting
