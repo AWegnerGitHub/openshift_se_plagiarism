@@ -16,3 +16,4 @@ setup(name='SE Plagiarism Control Panel',
 	 setup_requires=[] + pytest_runner,
 	 tests_require=['pytest']
      )
+
