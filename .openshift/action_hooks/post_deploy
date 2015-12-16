@@ -1,0 +1,11 @@
+#!/bin/bash
+# This is a simple post deploy hook executed after your application 
+# is deployed and started.  This script gets executed directly, so 
+# it could be python, php, ruby, etc.
+
+source $OPENSHIFT_HOMEDIR/python/virtenv/bin/activate
+set -e
+cd $OPENSHIFT_REPO_DIR/
+
+echo "Executing 'python migrations_manager.py db upgrade'"
+python migrations_manager.py db upgrade
