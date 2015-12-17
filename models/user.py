@@ -20,6 +20,7 @@ class User(models.db.Model):
     token_expires = Column(DateTime, nullable=False)
     access_token = Column(models.CoerceUTF8(100, convert_unicode=True), nullable=False)
     access_key = Column(models.CoerceUTF8(100, convert_unicode=True), nullable=False)
+    is_admin = Column(Boolean, default=False)
     
     def __init__(self, id, name, employee, creation_date, id_site, website, profile_link,
         access_key, access_token, token_expires):
