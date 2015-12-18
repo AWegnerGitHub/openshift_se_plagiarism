@@ -1,0 +1,4 @@
+#!/bin/bash
+# This is a simple prestart hook that executes before the cartridge starts
+
+source ~/app-root/data/.bash_profile
