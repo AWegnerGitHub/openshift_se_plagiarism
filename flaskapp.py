@@ -55,6 +55,11 @@ def request_token():
     }
     r = requests.post('https://stackexchange.com/oauth/access_token', data=payload)
     # Convert response to dictionary, since it's text and not json we do this
+    print
+    print
+    print r.text
+    print
+    print
     qs = r.text
     r = {x.split('=')[0]:x.split('=')[1] for x in qs.split("&")}
     
