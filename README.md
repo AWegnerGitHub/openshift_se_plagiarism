@@ -19,8 +19,19 @@ If the Action Hooks aren't executable, run this and then commit the changes:
 
     git update-index --chmod=+x <file>
 	
+The following needs to be added to the Gear's environment variables to allow integration with the Stack Exchange APIs
 
+    CLIENT_SECRET=YOURSECRET
+	
+`YOURSECRET` is the value provided when you registered an app. You can accomplish this by either logging in and editing `.bash_profile` directly,
+or issuing this command (while logged in):
 
+    echo "export CLIENT_SECRET=YOURSECRET" >> ~/app-root/data/.bash_profile
+	
+To use this value in a local test environment, create `user_settings.py` and add `CLIENT_SECRET=YOURSECRET` to the file
+
+	
+	
 # A basic Flask quickstart 
 *With support for serving easy APIs and static content*
 
