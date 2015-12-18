@@ -21,7 +21,7 @@ def load_config(app):
         import user_settings
         app.config['CLIENT_SECRET'] = user_settings.CLIENT_SECRET
         
-def connect_to_db():
+def connect_to_db(app):
     """
     Connect to a MySQL database and use the utf8 charset
     Return: The session
