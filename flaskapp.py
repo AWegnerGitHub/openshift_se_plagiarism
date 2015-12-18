@@ -32,10 +32,12 @@ def serveStaticResource(resource):
 
 @app.route("/test")
 def test():
-    return "<strong>It's Alive and pushed via Travis! Hooray! {}</strong>".format(app.config['CLIENT_SECRET'])
+    # TODO: REMOVE!
+    return "<strong>It's Alive and pushed via Travis! Hooray!</strong>"
     
 @app.route("/logintest")    
 def login_test():
+    # TODO: RENAME
     payload = {
         'client_id': app.config['CLIENT_ID'],
         'scope': '',
@@ -76,6 +78,7 @@ def request_token():
     # Redirect back to root with log in completed and this user object
     # How do I store client_secret outside of GitHub?
     # Use local MySQL for development!
+	# Redirect to next page when complete (not necessarily root)
     
 @app.route("/login_success")    
 def login_success():
