@@ -35,7 +35,7 @@ def test():
     # TODO: REMOVE!
     return "<strong>It's Alive and pushed via Travis! Hooray!</strong>"
     
-@app.route("/logintest")    
+@app.route("/login")    
 def login_test():
     # TODO: RENAME
     payload = {
@@ -57,11 +57,6 @@ def request_token():
     }
     r = requests.post('https://stackexchange.com/oauth/access_token', data=payload)
     # Convert response to dictionary, since it's text and not json we do this
-    print
-    print
-    print r.text
-    print
-    print
     qs = r.text
     r = {x.split('=')[0]:x.split('=')[1] for x in qs.split("&")}
     
@@ -70,6 +65,19 @@ def request_token():
     vars = "Content-Type: text/plain\n\n"
     for key, value in user_data['items'][0].iteritems():
         vars += "{} => {} <br/>\n".format(key, value)
+    check_user = {}
+    check_user.id = user_data['items'][0]['account_id']
+    check_user.name = user_data['items'][0]['display_name']
+    check_user.employee = user_data['items'][0]['is_employee']
+    check_user.registration_date = datetime.datetime.fromtimestamp(user_data['items'][0]['creation_date'])
+    check_user.id_site = user_data['items'][0]['user_id']
+    check_user.website = user_data['items'][0]['website_url']
+    check_user.profile_link = user_data['items'][0]['link']
+    check_user.token_expires = datetime.datetime.fromtimestamp(int(r['expires']))
+    check_user.profile_link = r['access_token']
+    s = utils.connect_to_db()
+    User = utils.get_or_create(s, models.User, **check_user)
+    vars += "\n{}".format(User)
     return vars
     # r.text => access_token=gKNUw5P0JtW8L(LemYBmOw))&expires=86399
     # Use this to create a user. Use SEAPI to query /me end point
@@ -78,7 +86,7 @@ def request_token():
     # Redirect back to root with log in completed and this user object
     # How do I store client_secret outside of GitHub?
     # Use local MySQL for development!
-	# Redirect to next page when complete (not necessarily root)
+    # Redirect to next page when complete (not necessarily root)
     
 @app.route("/login_success")    
 def login_success():
