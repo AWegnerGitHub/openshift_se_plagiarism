@@ -9,7 +9,7 @@ import requests
 from flask.json import jsonify
 import urllib
 from SEAPI import SEAPI
-imprt datetime
+import datetime
 
 try:
     import json
