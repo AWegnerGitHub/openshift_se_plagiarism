@@ -23,9 +23,9 @@ The following needs to be added to the Gear's environment variables to allow int
 
     CLIENT_SECRET="YOURSECRET"
 	
-`YOURSECRET` is the value provided when you registered an app. You can accomplish this logging in and editing `.bash_profile` directly at the following path:
+`YOURSECRET` is the value provided when you registered an app. This is accomplished by executing the following command, while logged in via SSH to your gear
 
-    ~/app-root/data/.bash_profile
+    echo "YOURSECRET" > ~/.env/user_vars/CLIENT_SECRET
 
     
 	
