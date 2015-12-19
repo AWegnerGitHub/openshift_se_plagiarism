@@ -31,7 +31,7 @@ class User(models.db.Model):
         self.website = website
         self.profile_link = profile_link
         self.access_token = access_token
-        self.token_expires = datetime.datetime.fromtimestamp(int(token_expires))
+        self.token_expires = datetime.datetime.utcnow() + datetime.timedelta(seconds=token_expires)
     
     def api_filter_string(self):
         """Returns the API filter string that has all the data this model requires"""
