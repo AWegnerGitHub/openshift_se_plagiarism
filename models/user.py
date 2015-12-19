@@ -22,7 +22,7 @@ class User(models.db.Model):
     is_admin = Column(Boolean, default=False)
     
     def __init__(self, id, name, employee, creation_date, id_site, website, profile_link,
-        access_key, access_token, token_expires):
+        access_token, token_expires):
         self.id = id
         self.name = name
         self.employee = employee
@@ -30,7 +30,6 @@ class User(models.db.Model):
         self.id_site = id_site
         self.website = website
         self.profile_link = profile_link
-        self.access_key = access_key
         self.access_token = access_token
         self.token_expires = datetime.datetime.fromtimestamp(int(token_expires))
     

@@ -75,12 +75,11 @@ def request_token():
     check_user['website'] = user_data['items'][0]['website_url']
     check_user['profile_link'] = user_data['items'][0]['link']
     check_user['token_expires'] = datetime.datetime.fromtimestamp(int(r['expires']))
-    check_user['profile_link'] = r['access_token']
+    check_user['access_token'] = r['access_token']
     s = utils.connect_to_db(app)
-    print()
     import pprint
     pprint.pprint(check_user)
-    print()
+    print r['expires']
     User = utils.get_or_create(s, models.User, **check_user)
     vars += "\n{}".format(User)
     return vars
